@@ -1,6 +1,6 @@
 "use strict";
 const fsP = require("fs/promises");
-SCRIPT_VARIABLE = process.argv[2];
+const SCRIPT_VARIABLE = process.argv[2];
 
 /** cat: reads file from path and prints contents */
 async function cat(path) {
@@ -16,8 +16,8 @@ async function cat(path) {
 /** reads contents in response from URL request and prints */
 async function webCat(url) {
   try{
-  response = await fetch(url);
-  urlData = await response.text();
+  const response = await fetch(url);
+  const urlData = await response.text();
 
   console.log(urlData);
   } catch (err) {
